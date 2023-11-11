@@ -27,7 +27,7 @@ input ENUM_LOG_LEVEL Log_Level = V_INFO;  // Log level.
 input bool Info_On_Chart = true;          // Display info on chart.
 
 // Includes strategy.
-#include "Stg_MA_Cross_Pivot.mqh"
+#include "Stg_MA_Cross_Candle.mqh"
 
 // Defines.
 #define ea_name "Strategy MA Cross Pivot"
