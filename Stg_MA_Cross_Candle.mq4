@@ -6,7 +6,7 @@
 
 /**
  * @file
- * Implements MA Cross Pivot strategy.
+ * Implements MA Cross Candle strategy.
  */
 
 // Includes the main code.

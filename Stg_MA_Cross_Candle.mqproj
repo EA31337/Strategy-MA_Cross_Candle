@@ -2,9 +2,9 @@
   "platform"    :"mt5",
   "program_type":"expert",
   "copyright"   :"Copyright 2016-2023, EA31337 Ltd",
-  "link"        :"https:\/\/github.com\/EA31337\/Strategy-MA",
+  "link"        :"https:\/\/github.com\/EA31337\/Strategy-MA_Cross_Candle",
   "version"     :"2.000",
-  "description" :"Strategy based on the moving average price indicators implementing daily pivot cross signal.",
+  "description" :"Strategy based on the MA price indicators implementing candle cross signal.",
   "cpu_architecture" :"0",
   "optimize"    :"0",
   "fpzerocheck" :"0",
@@ -16,7 +16,7 @@
   "files":
   [
     {
-      "path":"Stg_MA_Cross_Pivot.mq5",
+      "path":"Stg_MA_Cross_Candle.mq5",
       "compile":true,
       "relative_to_project":true
     },
@@ -216,7 +216,7 @@
       "relative_to_project":false
     },
     {
-      "path":"Stg_MA_Cross_Pivot.mqh",
+      "path":"Stg_MA_Cross_Candle.mqh",
       "compile":false,
       "relative_to_project":true
     },
