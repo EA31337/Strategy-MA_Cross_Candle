@@ -18,25 +18,25 @@ enum ENUM_STG_MA_CROSS_CANDLE_TYPE {
 
 // User params.
 INPUT_GROUP("MA Cross Candle strategy: main strategy params");
-INPUT ENUM_STG_MA_CROSS_CANDLE_TYPE MA_Cross_Candle_Type = STG_MA_CROSS_CANDLE_TYPE_DEMA;  // Indicator MA type
+INPUT ENUM_STG_MA_CROSS_CANDLE_TYPE MA_Cross_Candle_Type = STG_MA_CROSS_CANDLE_TYPE_ICHIMOKU;  // Indicator MA type
 INPUT_GROUP("MA Cross Candle strategy: strategy params");
-INPUT float MA_Cross_Candle_LotSize = 0;                // Lot size
-INPUT int MA_Cross_Candle_SignalOpenMethod = 1;         // Signal open method (-3-3)
-INPUT float MA_Cross_Candle_SignalOpenLevel = 0.0f;     // Signal open level
-INPUT int MA_Cross_Candle_SignalOpenFilterMethod = 32;  // Signal open filter method
-INPUT int MA_Cross_Candle_SignalOpenFilterTime = 3;     // Signal open filter time
-INPUT int MA_Cross_Candle_SignalOpenBoostMethod = 0;    // Signal open boost method
-INPUT int MA_Cross_Candle_SignalCloseMethod = 1;        // Signal close method (-3-3)
-INPUT int MA_Cross_Candle_SignalCloseFilter = 0;        // Signal close filter (-127-127)
-INPUT float MA_Cross_Candle_SignalCloseLevel = 0.0f;    // Signal close level
-INPUT int MA_Cross_Candle_PriceStopMethod = 1;          // Price stop method (0-127)
-INPUT float MA_Cross_Candle_PriceStopLevel = 2;         // Price stop level
-INPUT int MA_Cross_Candle_TickFilterMethod = 32;        // Tick filter method
-INPUT float MA_Cross_Candle_MaxSpread = 4.0;            // Max spread to trade (pips)
-INPUT short MA_Cross_Candle_Shift = 0;                  // Shift
-INPUT float MA_Cross_Candle_OrderCloseLoss = 80;        // Order close loss
-INPUT float MA_Cross_Candle_OrderCloseProfit = 80;      // Order close profit
-INPUT int MA_Cross_Candle_OrderCloseTime = -30;         // Order close time in mins (>0) or bars (<0)
+INPUT float MA_Cross_Candle_LotSize = 0;               // Lot size
+INPUT int MA_Cross_Candle_SignalOpenMethod = 1;        // Signal open method (-3-3)
+INPUT float MA_Cross_Candle_SignalOpenLevel = 5.0f;    // Signal open level
+INPUT int MA_Cross_Candle_SignalOpenFilterMethod = 0;  // Signal open filter method
+INPUT int MA_Cross_Candle_SignalOpenFilterTime = 3;    // Signal open filter time
+INPUT int MA_Cross_Candle_SignalOpenBoostMethod = 0;   // Signal open boost method
+INPUT int MA_Cross_Candle_SignalCloseMethod = 1;       // Signal close method (-3-3)
+INPUT int MA_Cross_Candle_SignalCloseFilter = 32;      // Signal close filter (-127-127)
+INPUT float MA_Cross_Candle_SignalCloseLevel = 0.0f;   // Signal close level
+INPUT int MA_Cross_Candle_PriceStopMethod = 1;         // Price stop method (0-127)
+INPUT float MA_Cross_Candle_PriceStopLevel = 2;        // Price stop level
+INPUT int MA_Cross_Candle_TickFilterMethod = 32;       // Tick filter method
+INPUT float MA_Cross_Candle_MaxSpread = 4.0;           // Max spread to trade (pips)
+INPUT short MA_Cross_Candle_Shift = 1;                 // Shift
+INPUT float MA_Cross_Candle_OrderCloseLoss = 0;        // Order close loss
+INPUT float MA_Cross_Candle_OrderCloseProfit = 20;     // Order close profit
+INPUT int MA_Cross_Candle_OrderCloseTime = -30;        // Order close time in mins (>0) or bars (<0)
 INPUT_GROUP("MA Cross Candle strategy: AMA indicator params");
 INPUT int MA_Cross_Candle_Indi_AMA_InpPeriodAMA = 20;                              // AMA period
 INPUT int MA_Cross_Candle_Indi_AMA_InpFastPeriodEMA = 4;                           // Fast EMA period
@@ -47,12 +47,12 @@ INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_AMA_SourceType = IDATA_BUILTIN
 INPUT_GROUP("MA Cross Candle strategy: DEMA indicator params");
 INPUT int MA_Cross_Candle_Indi_DEMA_Period = 25;                                    // Period
 INPUT int MA_Cross_Candle_Indi_DEMA_MA_Shift = 6;                                   // MA Shift
-INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_DEMA_Applied_Price = PRICE_TYPICAL;   // Applied Price
+INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_DEMA_Applied_Price = PRICE_CLOSE;     // Applied Price
 INPUT int MA_Cross_Candle_Indi_DEMA_Shift = 0;                                      // Shift
 INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_DEMA_SourceType = IDATA_BUILTIN;  // Source type
 INPUT_GROUP("MA Cross Candle strategy: FrAMA indicator params");
 INPUT int MA_Cross_Candle_Indi_FrAMA_Period = 10;                                    // Period
-INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_FrAMA_Applied_Price = PRICE_MEDIAN;    // Applied Price
+INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_FrAMA_Applied_Price = PRICE_CLOSE;     // Applied Price
 INPUT int MA_Cross_Candle_Indi_FrAMA_MA_Shift = 0;                                   // MA Shift
 INPUT int MA_Cross_Candle_Indi_FrAMA_Shift = 0;                                      // Shift
 INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_FrAMA_SourceType = IDATA_BUILTIN;  // Source type
@@ -66,8 +66,8 @@ INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_Ichimoku_SourceType = IDATA_BU
 INPUT_GROUP("MA Cross Candle strategy: MA indicator params");
 INPUT int MA_Cross_Candle_Indi_MA_Period = 26;                                    // Period
 INPUT int MA_Cross_Candle_Indi_MA_MA_Shift = 0;                                   // MA Shift
-INPUT ENUM_MA_METHOD MA_Cross_Candle_Indi_MA_Method = MODE_LWMA;                  // MA Method
-INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_MA_Applied_Price = PRICE_WEIGHTED;  // Applied Price
+INPUT ENUM_MA_METHOD MA_Cross_Candle_Indi_MA_Method = MODE_EMA;                   // MA Method
+INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_MA_Applied_Price = PRICE_CLOSE;     // Applied Price
 INPUT int MA_Cross_Candle_Indi_MA_Shift = 0;                                      // Shift
 INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_MA_SourceType = IDATA_BUILTIN;  // Source type
 INPUT_GROUP("MA Cross Candle strategy: Price Channel indicator params");
@@ -82,14 +82,14 @@ INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_SAR_SourceType = IDATA_ICUSTOM
 INPUT_GROUP("MA Cross Candle strategy: TEMA indicator params");
 INPUT int MA_Cross_Candle_Indi_TEMA_Period = 10;                                    // Period
 INPUT int MA_Cross_Candle_Indi_TEMA_MA_Shift = 0;                                   // MA Shift
-INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_TEMA_Applied_Price = PRICE_WEIGHTED;  // Applied Price
+INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_TEMA_Applied_Price = PRICE_CLOSE;     // Applied Price
 INPUT int MA_Cross_Candle_Indi_TEMA_Shift = 0;                                      // Shift
 INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_TEMA_SourceType = IDATA_BUILTIN;  // Source type
 INPUT_GROUP("MA Cross Candle strategy: VIDYA indicator params");
 INPUT int MA_Cross_Candle_Indi_VIDYA_Period = 30;                                    // Period
 INPUT int MA_Cross_Candle_Indi_VIDYA_MA_Period = 20;                                 // MA Period
 INPUT int MA_Cross_Candle_Indi_VIDYA_MA_Shift = 1;                                   // MA Shift
-INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_VIDYA_Applied_Price = PRICE_WEIGHTED;  // Applied Price
+INPUT ENUM_APPLIED_PRICE MA_Cross_Candle_Indi_VIDYA_Applied_Price = PRICE_CLOSE;     // Applied Price
 INPUT int MA_Cross_Candle_Indi_VIDYA_Shift = 0;                                      // Shift
 INPUT ENUM_IDATA_SOURCE_TYPE MA_Cross_Candle_Indi_VIDYA_SourceType = IDATA_BUILTIN;  // Source type
 
@@ -244,16 +244,19 @@ class Stg_MA_Cross_Candle : public Strategy {
       return false;
     }
     // float _level_pips = (float)(_level * _chart.GetPipSize());
-    double _value1 = _indi[_ishift][0];
+    // float _level_pips = (float)(_level * _chart.GetPipSize());
+    // double _pips_change = fabs(_indi[_ishift + 1][0] - _indi[_ishift][0]) * _chart.GetPipSize();
     // ChartEntry _ohlc = _chart.GetEntry();
     // double _candle = _ohlc.bar.ohlc.GetCandle();
     switch (_cmd) {
       case ORDER_TYPE_BUY:
         // Buy signal.
+        _result &= _indi[_ishift][0] >= _chart.GetClose(_shift + 1);
+        _result &= _indi[_ishift][0] <= _chart.GetOpen(_shift + 1);
         _result &= _indi.IsIncreasing(1, 0, _ishift);
         //_result &= _indi[_shift][0] > _d1_candle;
         //_result &= _indi[_shift + 1][0] < _d1_candle;
-        _result &= Math::ChangeInPct(_indi[_ishift + 1][0], _indi[_ishift][0], true) > _level;
+        _result &= Convert::GetValueDiffInPips(_indi[_ishift][0], _chart.GetOpen(), true, _chart.GetDigits()) > _level;
         if (_result && _method != 0) {
           if (METHOD(_method, 0))
             _result &= fmax4(_indi[_ishift][0], _indi[_ishift + 1][0], _indi[_ishift + 2][0], _indi[_ishift + 3][0]) ==
@@ -262,10 +265,12 @@ class Stg_MA_Cross_Candle : public Strategy {
         break;
       case ORDER_TYPE_SELL:
         // Sell signal.
+        _result &= _indi[_ishift][0] <= _chart.GetClose(_shift + 1);
+        _result &= _indi[_ishift][0] >= _chart.GetOpen(_shift + 1);
         _result &= _indi.IsDecreasing(1, 0, _ishift);
         //_result &= _indi[_shift][0] < _d1_candle;
         //_result &= _indi[_shift + 1][0] > _d1_candle;
-        _result &= Math::ChangeInPct(_indi[_ishift + 1][0], _indi[_ishift][0], true) < _level;
+        _result &= Convert::GetValueDiffInPips(_indi[_ishift][0], _chart.GetOpen(), true, _chart.GetDigits()) < _level;
         if (_result && _method != 0) {
           if (METHOD(_method, 0))
             _result &= fmin4(_indi[_ishift][0], _indi[_ishift + 1][0], _indi[_ishift + 2][0], _indi[_ishift + 3][0]) ==
@@ -274,5 +279,12 @@ class Stg_MA_Cross_Candle : public Strategy {
         break;
     }
     return _result;
+  }
+
+  /**
+   * Check strategy's closing signal.
+   */
+  bool SignalClose(ENUM_ORDER_TYPE _cmd, int _method = 0, float _level = 0.0f, int _shift = 0) {
+    return SignalOpen(Order::NegateOrderType(_cmd), _method, _level, 0);
   }
 };
