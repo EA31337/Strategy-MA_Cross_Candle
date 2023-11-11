@@ -6,8 +6,8 @@
 
 /**
  * @file
- * Implements MA Cross Pivot strategy.
+ * Implements MA Cross Candle strategy.
  */
 
 // Includes the main code.
-#include "Stg_MA_Cross_Pivot.mq5"
+#include "Stg_MA_Cross_Candle.mq5"
